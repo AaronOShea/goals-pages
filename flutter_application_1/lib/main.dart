@@ -13,11 +13,14 @@ class BudgetApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final store = TransactionStore();
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Budget App',
-      theme: ThemeData(primarySwatch: Colors.green),
-      home: TransactionProvider(store: store, child: const MainShell()),
+    return TransactionProvider(
+      store: store,
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Budget App',
+        theme: ThemeData(primarySwatch: Colors.green),
+        home: const MainShell(),
+      ),
     );
   }
 }

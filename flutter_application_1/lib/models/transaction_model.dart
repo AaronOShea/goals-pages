@@ -6,6 +6,7 @@ class Transaction {
   final TransactionType type;
   final String category;
   final DateTime date;
+  final String? note;
 
   const Transaction({
     required this.id,
@@ -13,6 +14,7 @@ class Transaction {
     required this.type,
     required this.category,
     required this.date,
+    this.note,
   });
 
   bool get isIncome => type == TransactionType.income;
